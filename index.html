@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You Rani ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            --accent: #00d2ff;
+            /* Cyan Glow */
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .main-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .sorry-title {
+            font-family: 'Parisienne', cursive;
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            min-height: 80px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn-next {
+            background: var(--accent);
+            color: #002b36;
+            padding: 15px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.4s;
+            box-shadow: 0 8px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn-next:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 210, 255, 0.5);
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-card">
+        <h1 class="sorry-title">Sorry Rani! <span style="font-size: 3rem;">🥺✨</span></h1>
+        <div id="typewriter" class="message-text"></div>
+        <a href="dashboard.html" class="btn-next">Next Step -></a>
+    </div>
+
+    <script>
+        const text = "Rani, ni birthday ki emi gift ivvaledhu ani em anukoku ra... andhuke ee small gift nee kosam! 💙";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++; setTimeout(typeWriter, 50);
+            }
+        }
+        function createStars() {
+            for (let j = 0; j < 50; j++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(star);
+            }
+        }
+        window.onload = () => { typeWriter(); createStars(); };
+    </script>
+</body>
+
+</html>

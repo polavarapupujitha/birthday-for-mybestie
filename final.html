@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Together Forever</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .photo-frame {
+            width: 80%;
+            max-width: 600px;
+            border: 10px solid white;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: showPhoto 3s ease-in-out forwards;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        @keyframes showPhoto {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+                filter: blur(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+                filter: blur(0px);
+            }
+        }
+
+        .msg {
+            position: absolute;
+            bottom: 10%;
+            color: white;
+            font-family: cursive;
+            font-size: 2rem;
+            text-shadow: 0 0 10px #ff4d6d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="photo-frame">
+        <img src="C:\Users\polav\OneDrive\Desktop\birthday\WhatsApp Image 2026-04-13 at 5.36.22 PM.jpeg"
+            alt="Mee Photo Ikkada Pettuko">
+    </div>
+    <div class="msg">Happy Birthday Bestie!❤️</div>
+</body>
+
+</html>
